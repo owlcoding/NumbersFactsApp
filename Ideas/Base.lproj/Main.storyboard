@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dik-dR-DAO">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="pfm-cS-392">
+            <objects>
+                <navigationController id="dik-dR-DAO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="seu-rU-iup">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sTR-uS-0v3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zyW-Qo-AlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-413" y="323"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ideas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bayou_de_view_7-2-05-daily-headlines.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="17G-9y-OI7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="5da-AU-pEH">
+                                <rect key="frame" x="8" y="8" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5da-AU-pEH" secondAttribute="height" multiplier="1:1" id="gEB-ds-Pw8"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-facebook-4-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="lpg-5z-xM7">
+                                <rect key="frame" x="492" y="8" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lpg-5z-xM7" secondAttribute="height" multiplier="1:1" id="CXp-2a-IuE"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CXp-2a-IuE"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trash.png" translatesAutoresizingMaskIntoConstraints="NO" id="cee-09-RQh">
+                                <rect key="frame" x="100" y="500" width="400" height="100"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7p-1c-7Ex">
+                                <rect key="frame" x="116" y="8" width="368" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="1u6-MT-LbA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="10"/>
+                                <state key="normal" title="http://numbersapi.com">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1u6-MT-LbA"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="tapLink:" destination="BYZ-38-t0r" eventType="touchUpInside" id="87q-Cg-wO4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5da-AU-pEH" firstAttribute="height" secondItem="17G-9y-OI7" secondAttribute="height" id="0qX-rL-mCH"/>
+                            <constraint firstItem="J7p-1c-7Ex" firstAttribute="leading" secondItem="5da-AU-pEH" secondAttribute="trailing" constant="8" symbolic="YES" id="1Vc-Jk-2c1"/>
+                            <constraint firstItem="5da-AU-pEH" firstAttribute="height" relation="lessThanOrEqual" secondItem="17G-9y-OI7" secondAttribute="height" multiplier="1/6" id="2CS-8q-dSH"/>
+                            <constraint firstItem="cee-09-RQh" firstAttribute="height" secondItem="5da-AU-pEH" secondAttribute="height" id="4iT-ax-eFm"/>
+                            <constraint firstItem="cee-09-RQh" firstAttribute="centerX" secondItem="17G-9y-OI7" secondAttribute="centerX" id="914-vu-DG6"/>
+                            <constraint firstItem="5da-AU-pEH" firstAttribute="leading" secondItem="17G-9y-OI7" secondAttribute="leadingMargin" id="CXo-hl-FUY"/>
+                            <constraint firstItem="J7p-1c-7Ex" firstAttribute="centerY" secondItem="5da-AU-pEH" secondAttribute="centerY" id="EN8-em-3JM"/>
+                            <constraint firstItem="J7p-1c-7Ex" firstAttribute="height" secondItem="5da-AU-pEH" secondAttribute="height" id="F3Q-UO-h6d"/>
+                            <constraint firstItem="J7p-1c-7Ex" firstAttribute="leading" secondItem="5da-AU-pEH" secondAttribute="trailing" constant="8" id="Iqz-fG-6RT"/>
+                            <constraint firstItem="5da-AU-pEH" firstAttribute="top" secondItem="17G-9y-OI7" secondAttribute="topMargin" id="JtI-tN-Mfq"/>
+                            <constraint firstItem="17G-9y-OI7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="QOv-D1-hHE"/>
+                            <constraint firstItem="lpg-5z-xM7" firstAttribute="leading" secondItem="J7p-1c-7Ex" secondAttribute="trailing" constant="8" id="WSb-qI-isg"/>
+                            <constraint firstItem="17G-9y-OI7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="YnC-Ok-vuc"/>
+                            <constraint firstItem="lpg-5z-xM7" firstAttribute="leading" secondItem="J7p-1c-7Ex" secondAttribute="trailing" constant="8" symbolic="YES" id="Z9o-p2-Szc"/>
+                            <constraint firstItem="lpg-5z-xM7" firstAttribute="width" secondItem="lpg-5z-xM7" secondAttribute="height" multiplier="1:1" id="cbS-VB-JvM"/>
+                            <constraint firstItem="lpg-5z-xM7" firstAttribute="trailing" secondItem="17G-9y-OI7" secondAttribute="trailingMargin" id="dlZ-1u-oTx"/>
+                            <constraint firstItem="lpg-5z-xM7" firstAttribute="height" secondItem="5da-AU-pEH" secondAttribute="height" id="eoc-3r-ceI"/>
+                            <constraint firstItem="lpg-5z-xM7" firstAttribute="width" secondItem="5da-AU-pEH" secondAttribute="width" id="fDD-9h-S37"/>
+                            <constraint firstItem="5da-AU-pEH" firstAttribute="width" relation="lessThanOrEqual" secondItem="17G-9y-OI7" secondAttribute="width" multiplier="1/6" id="fpi-Mz-yaT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="17G-9y-OI7" secondAttribute="trailing" constant="-16" id="mhb-yn-aXQ"/>
+                            <constraint firstItem="J7p-1c-7Ex" firstAttribute="centerX" secondItem="17G-9y-OI7" secondAttribute="centerX" id="npu-W7-Qdx"/>
+                            <constraint firstItem="cee-09-RQh" firstAttribute="bottom" secondItem="17G-9y-OI7" secondAttribute="bottom" id="pqD-lL-Q15"/>
+                            <constraint firstItem="lpg-5z-xM7" firstAttribute="top" secondItem="17G-9y-OI7" secondAttribute="topMargin" id="rCt-Lj-B1W"/>
+                            <constraint firstItem="J7p-1c-7Ex" firstAttribute="leading" secondItem="cee-09-RQh" secondAttribute="trailing" constant="8" id="vGT-dG-7DT"/>
+                            <constraint firstItem="cee-09-RQh" firstAttribute="width" secondItem="5da-AU-pEH" secondAttribute="width" multiplier="4" id="wfO-RW-XKu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="17G-9y-OI7" secondAttribute="bottom" id="wqA-gm-D5b"/>
+                            <constraint firstItem="J7p-1c-7Ex" firstAttribute="trailing" secondItem="17G-9y-OI7" secondAttribute="trailing" constant="-8" id="zrM-ZD-qzK"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0qX-rL-mCH"/>
+                                <exclude reference="Iqz-fG-6RT"/>
+                                <exclude reference="vGT-dG-7DT"/>
+                                <exclude reference="zrM-ZD-qzK"/>
+                                <exclude reference="WSb-qI-isg"/>
+                                <exclude reference="cbS-VB-JvM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="5JI-va-G6K"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="facebookImage" destination="lpg-5z-xM7" id="tpM-Ec-gme"/>
+                        <outlet property="trashImage" destination="cee-09-RQh" id="Pud-zv-Jbg"/>
+                        <outlet property="twitterImage" destination="5da-AU-pEH" id="adk-h5-Qf6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Trash.png" width="305" height="317"/>
+        <image name="Twitter.png" width="256" height="256"/>
+        <image name="bayou_de_view_7-2-05-daily-headlines.jpg" width="1588" height="1148"/>
+        <image name="iconmonstr-facebook-4-icon.png" width="413" height="413"/>
+    </resources>
+</document>
