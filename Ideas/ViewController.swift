@@ -47,10 +47,10 @@ class ViewController: UIViewController {
         image.drawInRect(rect);
         color.set()
 
-        UIRectFillUsingBlendMode(rect, kCGBlendModeMultiply);
+        UIRectFillUsingBlendMode(rect, CGBlendMode.Multiply);
         
         // restore alpha channel
-        image.drawInRect(rect, blendMode: kCGBlendModeDestinationIn, alpha: 1.0);
+        image.drawInRect(rect, blendMode: CGBlendMode.DestinationIn, alpha: 1.0);
 
         
         newImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -75,13 +75,15 @@ class ViewController: UIViewController {
             "http://numbersapi.com/random",
             parameters: nil,
             success: { (operation : AFHTTPRequestOperation!, responseObject : AnyObject!) in
-                println("JSON: " + responseObject.description)
+                print("JSON: " + responseObject.description)
                 ideaTitle.text = (responseObject ["type"] as! String?)! + ": " + (responseObject ["text"] as! String?)!
                 act.stopAnimating()
                 act.removeFromSuperview()
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
-                println("Error: " + error.localizedDescription)
+                print("Error: " + error.localizedDescription)
+                act.stopAnimating()
+                act.removeFromSuperview()
             }
         )
     }
@@ -89,8 +91,8 @@ class ViewController: UIViewController {
     {
         ideaView?.removeFromSuperview()
         ideaView = UIVisualEffectView (effect: UIBlurEffect(style: UIBlurEffectStyle.Dark));
-        ideaView.setTranslatesAutoresizingMaskIntoConstraints(false);
-        var w = NSLayoutConstraint (
+        ideaView.translatesAutoresizingMaskIntoConstraints = false;
+        let w = NSLayoutConstraint (
             item: ideaView,
             attribute: NSLayoutAttribute.Width,
             relatedBy: NSLayoutRelation.Equal,
@@ -99,7 +101,7 @@ class ViewController: UIViewController {
             multiplier: 0.8,
             constant: 0);
         
-        var h = NSLayoutConstraint (
+        let h = NSLayoutConstraint (
             item: ideaView,
             attribute: NSLayoutAttribute.Height,
             relatedBy: NSLayoutRelation.Equal,
@@ -108,13 +110,13 @@ class ViewController: UIViewController {
             multiplier: 0.7,
             constant: 0);
         
-        var x = NSLayoutConstraint (item: ideaView, attribute: NSLayoutAttribute.CenterX,
+        let x = NSLayoutConstraint (item: ideaView, attribute: NSLayoutAttribute.CenterX,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self.view,
             attribute: NSLayoutAttribute.CenterX,
             multiplier: 1,
             constant: 0);
-        var y = NSLayoutConstraint (item: ideaView, attribute: NSLayoutAttribute.CenterY,
+        let y = NSLayoutConstraint (item: ideaView, attribute: NSLayoutAttribute.CenterY,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self.view,
             attribute: NSLayoutAttribute.CenterY,
@@ -126,7 +128,7 @@ class ViewController: UIViewController {
         
         if ( ideaTitle == nil ) {
             ideaTitle = UILabel ()
-            ideaTitle.setTranslatesAutoresizingMaskIntoConstraints(false)
+            ideaTitle.translatesAutoresizingMaskIntoConstraints = false;
             ideaView.contentView.addSubview(ideaTitle)
             ideaTitle.font = UIFont (name: "Gill Sans", size: 28)
             ideaTitle.textColor = UIColor.whiteColor()
@@ -183,12 +185,12 @@ class ViewController: UIViewController {
         attachmentBehavior = nil
         if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation))
         {
-            println("landscape")
+            print("landscape")
         }
         
         if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation))
         {
-            println("Portrait")
+            print("Portrait")
         }
         
     }
@@ -250,14 +252,14 @@ class ViewController: UIViewController {
                     // share on Twitter
                     if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
                         
-                        var tweetShare:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                        let tweetShare:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
                         tweetShare.setInitialText(ideaTitle.text! + " - http://numbersapi.com")
                         
                         self.presentViewController(tweetShare, animated: true, completion: nil)
                         
                     } else {
                         
-                        var alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to tweet.", preferredStyle: UIAlertControllerStyle.Alert)
+                        let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to tweet.", preferredStyle: UIAlertControllerStyle.Alert)
                         
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                         
@@ -266,12 +268,12 @@ class ViewController: UIViewController {
                 }
                 if ( isTouch(panLocationInView, withinImage: facebookImage)) {
                     if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
-                        var fbShare:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                        let fbShare:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                         fbShare.setInitialText(ideaTitle.text! + " - http://numbersapi.com")
                         self.presentViewController(fbShare, animated: true, completion: nil)
 
                     } else {
-                        var alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+                        let alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.Alert)
                         
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                         self.presentViewController(alert, animated: true, completion: nil)

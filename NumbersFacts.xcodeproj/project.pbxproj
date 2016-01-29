@@ -165,6 +165,7 @@
 				5DA5C50B1B0FDC600015D8C3 /* Frameworks */,
 				5DA5C50C1B0FDC600015D8C3 /* Resources */,
 				23F395EE71B458B351B57022 /* Copy Pods Resources */,
+				D62FB807B00849FF3D111E10 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,6 +200,7 @@
 		5DA5C5061B0FDC600015D8C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Pawel Maczewski";
 				TargetAttributes = {
@@ -283,6 +285,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D62FB807B00849FF3D111E10 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
